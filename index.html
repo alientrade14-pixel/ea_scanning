@@ -833,8 +833,8 @@ footer {
         </select>
       </div>
       <div class="form-row">
-        <label class="form-label" data-id="label-broker">PROMOTION CODE</label>
-        <input type="text" id="inp-broker" class="form-input" placeholder="Enter code..." />
+       <label class="form-label" data-id="label-broker">KODE PROMO</label>
+        <input type="text" id="inp-broker" class="form-input" placeholder="Masukkan kode promo (opsional)..."
       </div>
       <button class="form-submit" onclick="submitOrder()" data-id="btn-submit">🚀 SEND ORDER</button>
       <p class="form-note" data-id="form-note">
@@ -962,7 +962,7 @@ function submitOrder() {
     ? 'Mohon lengkapi semua field terlebih dahulu!'
     : 'Please fill in all fields before submitting!';
 
-  if(!nama||!wa||!akun||!paket||!code) { alert(errMsg); return; }
+  if(!nama||!wa||!akun||!paket) { alert(errMsg); return; }
 
   const msg = encodeURIComponent(
     `🛸 ORDER ALIEN TERMINAL V14\n` +
@@ -971,7 +971,7 @@ function submitOrder() {
     `WA/TG  : ${wa}\n` +
     `Account: ${akun}\n` +
     `Package: ${paket}\n` +
-    `Code : ${code}\n` +
+    `Code   : ${broker || '-'}\n` +
     `━━━━━━━━━━━━━━━━━━\n` +
     `Please confirm & send payment info. Thank you!`
   );
