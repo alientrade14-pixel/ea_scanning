@@ -877,7 +877,7 @@ const LANG = {
     // How
     'how-tag':'CARA PAKAI','how-title':'Mulai dalam <em>5 Menit</em>',
     'how-desc':'Tidak perlu pengalaman coding. Pasang, isi key, pilih mode — selesai.',
-    's1-title':'Order & Dapatkan License Key','s1-desc':'Isi form order di bawah → Captain Fx9 kirim file EA + License Key dalam 1x24 jam via WhatsApp/Telegram.',
+    's1-title':'Order & Dapatkan License Key','s1-desc':'Isi form order di bawah → Admin kirim file EA + License Key dalam 1x24 jam via WhatsApp/Telegram.',
     's2-title':'Pasang EA di MetaTrader 5','s2-desc':'Copy file .ex5 ke folder Experts MT5 → Drag ke chart → Isi License Key di parameter EA → OK.',
     's3-title':'Pilih Mode & Mulai Scan','s3-desc':'Klik tombol SCALPING atau SWING di panel atas → EA langsung scan semua pair di watchlist kamu.',
     's4-title':'Follow Sinyal','s4-desc':'Kartu sinyal muncul dengan score, pattern, dan Elliott Wave. Klik FOLLOW BUY / FOLLOW SELL — EA eksekusi otomatis.',
@@ -896,7 +896,7 @@ const LANG = {
     'order-tag':'ORDER','order-title':'Order <em>Sekarang</em>',
     'order-desc':'Isi form di bawah. Admin akan menghubungi kamu dalam 1x24 jam.',
     'label-name':'NAMA LENGKAP','label-wa':'WHATSAPP / TELEGRAM','label-acc':'NOMOR AKUN MT5',
-    'label-pkg':'PILIH PAKET','label-broker':'BROKER MT5',
+    'label-pkg':'PILIH PAKET','promo-code':'PROMOTION CODE',
     'pkg-placeholder':'-- Pilih Paket --','btn-submit':'🚀 KIRIM ORDER',
     'form-note':'Setelah submit, Admin akan menghubungi kamu via WA/Telegram.<br/>Pembayaran via Transfer Bank / QRIS / Dana / GoPay / Crypto / Wise.',
     // Footer
@@ -912,7 +912,7 @@ const LANG = {
     'feat-desc':'Every signal is filtered by 7 independent components before being displayed. No random signals.',
     'how-tag':'HOW IT WORKS','how-title':'Start in <em>5 Minutes</em>',
     'how-desc':'No coding experience needed. Install, enter key, select mode — done.',
-    's1-title':'Order & Get License Key','s1-desc':'Fill the order form → Captain Fx9 sends the EA file + License Key within 24 hours via WhatsApp/Telegram.',
+    's1-title':'Order & Get License Key','s1-desc':'Fill the order form → Admin sends the EA file + License Key within 24 hours via WhatsApp/Telegram.',
     's2-title':'Install EA in MetaTrader 5','s2-desc':'Copy .ex5 file to MT5 Experts folder → Drag to chart → Enter License Key in EA parameters → OK.',
     's3-title':'Select Mode & Start Scanning','s3-desc':'Click SCALPING or SWING button on the top panel → EA instantly scans all pairs in your watchlist.',
     's4-title':'Follow Signals','s4-desc':'Signal cards appear with score, pattern, and Elliott Wave. Click FOLLOW BUY / FOLLOW SELL — EA executes automatically.',
@@ -928,7 +928,7 @@ const LANG = {
     'order-tag':'ORDER','order-title':'Order <em>Now</em>',
     'order-desc':'Fill the form below. Admin will contact you within 24 hours.',
     'label-name':'FULL NAME','label-wa':'WHATSAPP / TELEGRAM','label-acc':'MT5 ACCOUNT NUMBER',
-    'label-pkg':'SELECT PACKAGE','label-broker':'MT5 BROKER',
+    'label-pkg':'SELECT PACKAGE','promo-code':'PROMOTION CODE',
     'pkg-placeholder':'-- Select Package --','btn-submit':'🚀 SEND ORDER',
     'form-note':'After submitting, Admin will contact you via WA/Telegram.<br/>Payment via Bank Transfer / Crypto / PayPal / Wise.',
     'foot-feat':'Features','foot-price':'Pricing','foot-order':'Order',
@@ -962,7 +962,7 @@ function submitOrder() {
     ? 'Mohon lengkapi semua field terlebih dahulu!'
     : 'Please fill in all fields before submitting!';
 
-  if(!nama||!wa||!akun||!paket||!broker) { alert(errMsg); return; }
+  if(!nama||!wa||!akun||!paket||!code) { alert(errMsg); return; }
 
   const msg = encodeURIComponent(
     `🛸 ORDER ALIEN TERMINAL V14\n` +
@@ -971,7 +971,7 @@ function submitOrder() {
     `WA/TG  : ${wa}\n` +
     `Account: ${akun}\n` +
     `Package: ${paket}\n` +
-    `Broker : ${broker}\n` +
+    `Code : ${code}\n` +
     `━━━━━━━━━━━━━━━━━━\n` +
     `Please confirm & send payment info. Thank you!`
   );
